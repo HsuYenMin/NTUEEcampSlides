@@ -7,7 +7,7 @@
 		<title>reveal.js - The HTML Presentation Framework</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="2015 EpisodE camp">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -45,8 +45,26 @@
 				    </section >
 					<section data-background="quad.jpg">
 					</section>
-
+          <section>
+            <h3>Before our fantastic adventure</h3>
+          </section>
+          <section>
+            <p>Open the firefox</p>
+            <p>Press <b style="color:#00FF00" > code</b>&nbsp button</p>
+            <p>Press <b style="color:#00FF00" > Run</b>&nbsp button</p>
+            <p>You will see...</p>
+          </section>
+          <section>
+            <h2>Today's target</h2>
+            <p>Make the fighter eq. succesfully</p>
+            <p> there will be a piucture for simulating </p>
+          </section>
+          <section>
+            <h2>Now the adventure begins...</h2>
+            <img src="pic/adventure.jpg">
+          </section>
 				</section>
+        </section>
 				<section>
 					<h2>大綱</h2>
 					<br>
@@ -377,9 +395,100 @@ else:
 						</center>						
 					</section>
 				</section>
+        <section>
+          <section>
+          <h2>PID controller</h2>
+            <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+                <ul>
+                    <li class="fragment" data-fragment-index="0">Proportional - 比例</li>
+                    <li class="fragment" data-fragment-index="1">Integral     - 積分</li>
+                    <li class="fragment" data-fragment-index="2">derivative   - 微分</li>
+                    <li class="fragment" data-fragment-index="3">controller   - 控制器</li>
+                </ul>
+            </div>
+          </section>
+          <section>
+          <h2>WTF is PID controller</h2>
+            <p>控制我們的四軸在各種誤差、外部干擾導致傾斜時，<br>回復到平衡狀態的控制器。</p>
+          </section>
+          <section>
+            <h2>P 的作用</h2>
+              <p class="fragment" data-fragment-index="0">簡單來講就是偏移量越多，給予的回復力越大,<br>成正比關係，以數學表示:</p>
+              <p class="fragment" data-fragment-index="1">$F_p = -k_p \times x$</p>
+              <p class="fragment" data-fragment-index="2">但若只有 $P$ 沒有 $I$、$D$，<br>我們的四軸就會進行簡諧運動、停不下來...</p>
+              <p class="fragment" data-fragment-index="3">Open the firefox to see : )</p>
+          </section>
+          <section>
+            <h2>P + D 的作用</h2>
+      <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+                <!--NEEEEEEEEEEEEEEEEEEEEEEEEEED MODIFY-->
+        <p class="fragment" data-fragment-index="0">(need modify)$D$ 的作用是指若四軸旋轉的角速度，系統會給予一個反向於角速度的力。以數學表示:</p>
+        <p class="fragment" data-fragment-index="1">$F_d = - k_d \times v $(速度)</p>
+        <p class="fragment" data-fragment-index="2">將$P$與$D$結合可使四軸漸漸趨近於平衡狀態，<br>不會處於震盪狀態。</p>
+        <p class="fragment" data-fragment-index="3">但若沒有 $I$，且機器本身並未完美，<br>可能平衡狀態會是斜的...</p>
+        <p class="fragment" data-fragment-index="4">Open the firefox to see : )</p>
+      </div>
+        </section>
+        <section>
+        <h2>P + I + D 的作用</h2>
+          <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+            <p class="fragment" data-fragment-index="0">$I$ 的作用是計算誤差對時間的累加(積分)，並做出修正。以數學表示:</p>
+            <p class="fragment" data-fragment-index="1">$F_i = - k_i \times$ (x(誤差)對t(時間)的累加) </p>
+            <p class="fragment" data-fragment-index="2">將 $P$, $I$, $D$ 結合就可以使四軸完美平衡啦!</p>
+            <p class="fragment" data-fragment-index="4"><br>$F = F_p + F_d + F_i$</p>
+            <p class="fragment" data-fragment-index="5">($F$ 為修正力)</p>
+            <p class="fragment" data-fragment-index="6">Open the firefox to see : )</p>
+        </div>
+        </section>
+        </section>
+      <section>
+        <section>
+         <h2>Challenge : 寫一個PID的函式</h2> 
+						<pre><code style="font-size: 27px "class="python">
+def get_control(self,t,err,derr): 
+              
+    if self.last_time is None:
+
+        self.last_time = t
+    
+        return 0.
+
+    #算出up(P項)
+
+    #算出ud(D項)
+
+    #算出self.int_err (誤差對時間的累加)
+
+    #設定self.int_err (絕對值上限為self.int_restriction)
+
+    #算出ui(I項)
+
+    #更新 self.last_time
+
+    return (up + ui + ud)
+</code></pre>
+        </section>
+      </section>
+      <section>
+					<section>
+						<h2>Survival Guide(I)</h2>
+            <p>Don't set <font color="#ffff00" size="14px">self.ki&nbsp&nbspself.kd&nbsp&nbspself.kp</font> on your own!</p>
+            <p>Use <font color="#ffff00" size="14px">Tab</font> for indent!</p>
+            <p>Modify the idiot code<font color="#ffff00" size="14px">(up=0,ui=0,ud=0)</font></p>
+						<br>
+					</section>
+          <section>
+						<h2>Survival Guide(II)</h2>
+            <p>If you have any problem,<br>
+              ask powerful teamleader and teaching group : )
+            </p>
+            <img src="pic/powerful_team.jpg">
+          </section>
+      </section>
 				</div>
-                </div>
-	</body>	
+      </div>
+
+</body>	
 
 <!--	<body>
 
