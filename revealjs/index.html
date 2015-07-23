@@ -298,10 +298,89 @@ elif WeatherToday=="下雨天": #如果今天下雨
 						
 					</section>			
 				</section>
+				
+				
+				<section>
+					<section>
+						<h2>迴圈(LOOP)</h2>
+						<p>for, while</p>
+					</section>
+					<section>
+						<h2>WHILE</h2>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+while 判斷式:
+
+	要做的事
+						</code></pre>
+						</div>
+						<p>判斷式成立時，執行要做的事；接著再檢查判斷式，若成立，再執行想做的事...</p>
+						
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+	counter = counter + 1
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>縮排</h2>
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+	counter = counter + 1
+						</code></pre>
+						</div>
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+counter = counter + 1
+						</code></pre>
+						</div>
+						<p>兩者有何差別?</p>
+					</section>
+					<section>
+						<h2>for</h2>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+for 變數 in 陣列:
+
+	要做的事
+						</code></pre>
+						</div>
+						<p>將變數帶入陣列中的所有值，分別執行要做的事...</p>
+						
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+sum = 0
+
+aList = [1, 2, 3, 4, 5, 6]
+
+for element in aList:
+
+	sum = sum + element
+						</code></pre>
+						</div>
+						<p>sum最終為多少...?</p>
+					</section>
+				</section>
 				</div>
                 </div>
-				
-				
 	</body>
 
 <!--	<body>
