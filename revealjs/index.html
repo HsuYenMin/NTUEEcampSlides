@@ -57,7 +57,7 @@
           <section>
             <h2>Today's target</h2>
             <p>Make the fighter eq. succesfully</p>
-            <p> there will be a piucture for simulating </p>
+            <p> there will be a picture for simulating </p>
           </section>
           <section>
             <h2>Now the adventure begins...</h2>
@@ -594,6 +594,14 @@ for element in aList:
         <section>
          <h2>Challenge : 寫一個PID的函式</h2> 
 						<pre><code style="font-size: 27px "class="python">
+def __init__(self, kp, ki, kd, *, imax):
+
+        super().__init__(kp, ki, kd, imax=imax)
+		
+        self.last_time = None
+
+	#定義...?
+
 def get_control(self,t,err,derr): 
               
     if self.last_time is None:
@@ -615,6 +623,7 @@ def get_control(self,t,err,derr):
     #更新 self.last_time
 
     return (up + ui + ud)
+	
 </code></pre>
         </section>
       </section>
@@ -624,7 +633,7 @@ def get_control(self,t,err,derr):
             <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
                 <ul>
                     <li class="fragment" data-fragment-index="0">Don't set <font color="#ffff00" size="14px">self.ki&nbsp&nbspself.kd&nbsp&nbspself.kp</font> on your own!</li>
-                    <li class="fragment" data-fragment-index="1">Use <font color="#ffff00" size="14px">Blank space</font> for indent!</li>
+                    <li class="fragment" data-fragment-index="1">Use <font color="#ffff00" size="14px">Tab</font> for indent!</li>
                     <li class="fragment" data-fragment-index="2">Modify the idiot code<font color="#ffff00" size="14px">(up=0,ui=0,ud=0)</font></li>
                 </ul>
 						<br>
@@ -632,7 +641,7 @@ def get_control(self,t,err,derr):
           <section>
 						<h2>Survival Guide(II)</h2>
             <p class="fragment" data-fragment-index="0">If you have any problem,<br>
-              ask powerful teamleader and teaching group : )
+              ask powerful team-leaders and teaching group : )
             </p>
             <p class="fragment" data-fragment-index="1">
               <img src="pic/powerful_team.jpg">
