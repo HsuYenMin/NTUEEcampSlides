@@ -95,6 +95,74 @@
 				</section>
 				<section>
 					<section>
+						<h2>執行Python程式</h2>
+					</section>
+					<section>
+						<p style="font-size:60px">step1: 開啟終端機(Terminal)</p>
+						<p>方法: 滑鼠右鍵->開啟終端機 or Ctrl+Alt+T</p>
+					</section>
+					<section>
+						<h3>step2: 將路徑移至桌面</h3>
+						<p>方法: 在終端機輸入</p>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+% >> ls
+
+% >> cd Desktop
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<h3>step3: 創建.py檔</h3>
+						<p align="left">  方法:</p>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+% >> subl + 檔名
+						</code></pre>
+						</div>
+						<div>
+						<p align="left">ex:</p>
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+% >> subl test.py
+						</code></pre>
+						</div>
+						
+					</section>
+					<section>
+						<h3>step4: 輸入code</h3>
+						<p>方法: 打上 print("Hello World!")</p>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+print("Hello World!")
+
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<h3>step5: 存檔&離開</h3>
+						<p>方法: 左上角 File->Save or Ctrl + S</p>
+						<p>方法: 左上角 File->Quit or Ctrl + Q</p>
+					</section>
+					<section>
+						<h3>step6: 執行.py檔</h3>
+						<p>如Terminal仍在執行sublime，輸入Ctrl + C 中斷</p>
+						</br>
+						<p align="left">  方法:</p>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+% >> python3 + 檔名
+						</code></pre>
+						</div>
+						<div>
+						<p align="left">ex:</p>
+						<pre><code  style="font-size: 40px;"class="python" data-trim contenteditable>
+% >> python3 test.py
+						</code></pre>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
 						<h2>變數</h2>
 						<p>Variables</p>
 					</section>
@@ -395,6 +463,85 @@ else:
 						</center>						
 					</section>
 				</section>
+				<section>
+					<section>
+						<h2>迴圈(LOOP)</h2>
+						<p>for, while</p>
+					</section>
+					<section>
+						<h2>WHILE</h2>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+while 判斷式:
+
+	要做的事
+						</code></pre>
+						</div>
+						<p>判斷式成立時，執行要做的事；接著再檢查判斷式，若成立，再執行想做的事...</p>
+						
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+	counter = counter + 1
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>縮排</h2>
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+	counter = counter + 1
+						</code></pre>
+						</div>
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+counter = 0
+
+while counter < 10:
+
+	print("電機營好棒棒")
+	
+counter = counter + 1
+						</code></pre>
+						</div>
+						<p>兩者有何差別?</p>
+					</section>
+					<section>
+						<h2>for</h2>
+						<div style="width:1000px">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+for 變數 in 陣列:
+
+	要做的事
+						</code></pre>
+						</div>
+						<p>將變數帶入陣列中的所有值，分別執行要做的事...</p>
+						
+						<div style="width:1000px" class="fragment">
+						<pre><code  style="font-size: 40px;" class="python" data-trim contenteditable>
+sum = 0
+
+aList = [1, 2, 3, 4, 5, 6]
+
+for element in aList:
+
+	sum = sum + element
+						</code></pre>
+						</div>
+						<p>sum最終為多少...?</p>
+					</section>
+				</section>
         <section>
           <section>
           <h2>PID controller</h2>
@@ -414,7 +561,7 @@ else:
           <section>
             <h2>P 的作用</h2>
               <p class="fragment" data-fragment-index="0">簡單來講就是偏移量越多，給予的回復力越大,<br>成正比關係，以數學表示:</p>
-              <p class="fragment" data-fragment-index="1">$F_p = -k_p \times x$</p>
+              <p class="fragment" data-fragment-index="1"><font color="FF66FF">$F_p = -k_p \times x$</font></p>
               <p class="fragment" data-fragment-index="2">但若只有 $P$ 沒有 $I$、$D$，<br>我們的四軸就會進行簡諧運動、停不下來...</p>
               <p class="fragment" data-fragment-index="3">Open the firefox to see : )</p>
           </section>
@@ -423,7 +570,7 @@ else:
       <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
                 <!--NEEEEEEEEEEEEEEEEEEEEEEEEEED MODIFY-->
         <p class="fragment" data-fragment-index="0">(need modify)$D$ 的作用是指若四軸旋轉的角速度，系統會給予一個反向於角速度的力。以數學表示:</p>
-        <p class="fragment" data-fragment-index="1">$F_d = - k_d \times v $(速度)</p>
+        <p class="fragment" data-fragment-index="1"><font color="FF66FF">$F_d = - k_d \times v $(速度)</font></p>
         <p class="fragment" data-fragment-index="2">將$P$與$D$結合可使四軸漸漸趨近於平衡狀態，<br>不會處於震盪狀態。</p>
         <p class="fragment" data-fragment-index="3">但若沒有 $I$，且機器本身並未完美，<br>可能平衡狀態會是斜的...</p>
         <p class="fragment" data-fragment-index="4">Open the firefox to see : )</p>
@@ -433,10 +580,12 @@ else:
         <h2>P + I + D 的作用</h2>
           <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
             <p class="fragment" data-fragment-index="0">$I$ 的作用是計算誤差對時間的累加(積分)，並做出修正。以數學表示:</p>
-            <p class="fragment" data-fragment-index="1">$F_i = - k_i \times$ (x(誤差)對t(時間)的累加) </p>
+            <p class="fragment" data-fragment-index="1"><font color="#FF66FF">$F_i = - k_i \times$ (&nbsp$x$&nbsp(誤差)對&nbsp$t$&nbsp(時間)的累加)</font> </p>
             <p class="fragment" data-fragment-index="2">將 $P$, $I$, $D$ 結合就可以使四軸完美平衡啦!</p>
+            <font color="#FF66FF">
             <p class="fragment" data-fragment-index="4"><br>$F = F_p + F_d + F_i$</p>
             <p class="fragment" data-fragment-index="5">($F$ 為修正力)</p>
+            </font>
             <p class="fragment" data-fragment-index="6">Open the firefox to see : )</p>
         </div>
         </section>
@@ -472,17 +621,22 @@ def get_control(self,t,err,derr):
       <section>
 					<section>
 						<h2>Survival Guide(I)</h2>
-            <p>Don't set <font color="#ffff00" size="14px">self.ki&nbsp&nbspself.kd&nbsp&nbspself.kp</font> on your own!</p>
-            <p>Use <font color="#ffff00" size="14px">Tab</font> for indent!</p>
-            <p>Modify the idiot code<font color="#ffff00" size="14px">(up=0,ui=0,ud=0)</font></p>
+            <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+                <ul>
+                    <li class="fragment" data-fragment-index="0">Don't set <font color="#ffff00" size="14px">self.ki&nbsp&nbspself.kd&nbsp&nbspself.kp</font> on your own!</li>
+                    <li class="fragment" data-fragment-index="1">Use <font color="#ffff00" size="14px">Blank space</font> for indent!</li>
+                    <li class="fragment" data-fragment-index="2">Modify the idiot code<font color="#ffff00" size="14px">(up=0,ui=0,ud=0)</font></li>
+                </ul>
 						<br>
 					</section>
           <section>
 						<h2>Survival Guide(II)</h2>
-            <p>If you have any problem,<br>
+            <p class="fragment" data-fragment-index="0">If you have any problem,<br>
               ask powerful teamleader and teaching group : )
             </p>
-            <img src="pic/powerful_team.jpg">
+            <p class="fragment" data-fragment-index="1">
+              <img src="pic/powerful_team.jpg">
+              </p>
           </section>
       </section>
 				</div>
