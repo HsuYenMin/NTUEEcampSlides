@@ -197,7 +197,7 @@ print ( a != 1)# True
 					<section>
 						<h3>Logical Operators</h3>
 						<center>
-						<div style="width:800px">
+						<div style="width:1000px">
 						<pre><code  style="font-size: 40px;"class="python">
 a = 1
 
@@ -231,7 +231,7 @@ print (not a == 1)# False
 						<section>
 						<h3>舉個簡單的例子</h3>
 						<center>
-						<div style="width:600px">
+						<div style="width:800px">
 						<pre><code  style="font-size: 40px;"class="python">
 a="好 "
 
@@ -241,7 +241,7 @@ b=a+b
 
 print(a)   #輸出 好 
 
-print(a+b) #輸出 好 慘
+print(a + b) #輸出 好 慘
 						</code></pre>
 						</div>
 						</center>
@@ -295,7 +295,7 @@ if 判斷式:
 						<pre><code  style="font-size: 35px "class="python">
 if WeatherToday=="颱風天": #如果今天是颱風天
 
-	goWhitewaterRafting()  #去泛舟
+	GoWhitewaterRafting()  #去泛舟
 						</code></pre>
 						<p>判斷式成立時，才執行要做的事</p>
 					
@@ -331,18 +331,51 @@ elif 判斷式3:
 						<pre><code  style="font-size: 35px "class="python">
 if WeatherToday=="颱風天": #如果今天是颱風天
 
-    goWhitewaterRafting()  #去泛舟
+	GoWhitewaterRafting()  #去泛舟
 
 elif WeatherToday=="下雨天": #如果今天下雨
     
-    prepareForEarthquake() #防震準備
+	PrepareForEarthquake() #防震準備
 						</code></pre>
 						</center>					
 					</section>
 					<section>
 						<p style="font-size:60px">else</p>
 						<p>不然的話</p>	
-					</section>			
+						<center>
+						<pre><code  style="font-size: 35px "class="python">
+if 判斷式1:
+
+	判斷式1成立時要做的事
+
+elif 判斷式2:
+
+	判斷式1不成立，且判斷式2成立時要做的事
+
+	...
+else:
+	前面所有判斷式不成立時，要做的事
+						</code></pre>
+						</center>
+					</section>
+					<section>
+						<h3>舉個簡單的例子</h3>
+						<center>
+						<pre><code  style="font-size: 35px "class="python">
+if Weather=="颱風天":      #若今天是颱風天
+
+	GoWhitewaterRafting()  #去泛舟
+
+elif Weather=="下雨天":    #如果今天下雨
+    
+	PrepareForEarthquake() #防震準備
+
+else:
+	GotoEEcamp()      #來參加電機營
+	
+						</code></pre>
+						</center>						
+					</section>
 				</section>
 				</div>
                 </div>
